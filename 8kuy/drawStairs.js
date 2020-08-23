@@ -1,0 +1,13 @@
+//https://www.codewars.com/kata/5b4e779c578c6a898e0005c5/
+
+function drawStairs(n) {
+    if (n > 1){
+        let str = ''
+        for (let i = 1; i <n; i++){
+            str +=`I\n${' '.repeat(i)}`
+        }
+        return str + 'I';
+    } else {
+        return 'I';
+    }
+}
