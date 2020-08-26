@@ -1,30 +1,14 @@
 // https://www.codewars.com/kata/5635e7cb49adc7b54500001c/
 
 function solve(n) {
+    if (n % 10 !== 0) return -1;
+    const arr = [500, 200, 100, 50, 20, 10];
     let count = 0;
-    while (n >= 500) {
-        count++;
-        n -= 500;
+    for (let el of arr) {
+        while (n >= el) {
+            n -= el;
+            count++;
+        }
     }
-    while (n >= 200) {
-        count++;
-        n -= 200;
-    }
-    while (n >= 100) {
-        count++;
-        n -= 100;
-    }
-    while (n >= 50) {
-        count++;
-        n -= 50;
-    }
-    while (n >= 20) {
-        count++;
-        n -= 20;
-    }
-    while (n >= 10) {
-        count++;
-        n -= 10;
-    }
-    return (count === 0 || n === 0) ? count : -1;
+    return count;
 }
